@@ -88,19 +88,58 @@ var upperCasedCharacters = [
   "Z",
 ];
 
-// CREATING CODE THAT CREATES A RANDOM SELECTIN FROM SPECIAL CHARACTER ARRAY BASED ON NUMBER CHOSEN
+// GET NUMBER OF CHARACTER INPUT FOR SPECIAL CHARACTER CODE
+let numberChosenSpecial = "";
 
-let numberChosen = prompt(
-  "How many special characters would you like? Please pick between 2 and 32"
-);
-
-for (let i = 0; i < numberChosen; i++) {
-  console.log(
-    specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+function getUserSpecialCharacterNumber() {
+  numberChosenSpecial = prompt(
+    "How many special characters would you like? Please pick between 2 and 32"
   );
+  return numberChosenSpecial;
 }
 
-// const randomSpecialCharacter = 0;
+// RUN THE FUNCTION
+getUserSpecialCharacterNumber();
+
+// GET NUBER OF RANDOM SPECIAL CHARACTERS BASED ON USER NUMBER SELECTION
+function createSpecialCharacterPassword() {
+  if (numberChosenSpecial < 2 || numberChosenSpecial > 32) {
+    alert("Please enter a number between 2 and 32");
+    getUserSpecialCharacterNumber();
+  } else {
+    for (let i = 0; i < numberChosenSpecial; i++) {
+      console.log(
+        specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+      );
+    }
+  }
+}
+
+let numberChosenNumeric = "";
+function getUserNumericCharacterNumber() {
+  numberChosenNumeric = prompt(
+    "How many numerical characters would you like? Please pick between 2 and 32"
+  );
+  return numberChosenNumeric;
+}
+
+// RUN THE FUNCTION
+getUserSpecialCharacterNumber();
+getUserNumericCharacterNumber();
+
+// GET NUBER OF RANDOM SPECIAL CHARACTERS BASED ON USER NUMBER SELECTION
+// function createSpecialCharacterPassword() {
+//   if (numberChosen < 2 || numberChosen > 32) {
+//     alert("Please enter a number between 2 and 32");
+//     getUserSpecialCharacterNumber();
+//   } else {
+//     for (let i = 0; i < numberChosen; i++) {
+//       console.log(
+//         specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+//       );
+//     }
+//   }
+// }
 
 // Function to prompt user for password options
 function getPasswordOptions() {}
