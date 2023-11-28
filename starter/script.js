@@ -88,44 +88,34 @@ var upperCasedCharacters = [
   "Z",
 ];
 
-// GET NUMBER OF CHARACTER INPUT FOR SPECIAL CHARACTER CODE
+// EMPTY VARIABLES
 let numberChosenSpecial = "";
 
-function getUserSpecialCharacterNumber() {
-  numberChosenSpecial = prompt(
-    "How many special characters would you like? Please pick between 2 and 32"
-  );
-  return numberChosenSpecial;
-}
+let specialCharacter = "";
 
-// RUN THE FUNCTION
-getUserSpecialCharacterNumber();
+// GET NUMBER OF CHARACTER INPUT FOR SPECIAL CHARACTER CODE
+numberChosenSpecial = prompt(
+  "How many special characters would you like? Please pick between 2 and 32"
+);
 
 // GET NUBER OF RANDOM SPECIAL CHARACTERS BASED ON USER NUMBER SELECTION
-function createSpecialCharacterPassword() {
-  if (numberChosenSpecial < 2 || numberChosenSpecial > 32) {
-    alert("Please enter a number between 2 and 32");
-    getUserSpecialCharacterNumber();
-  } else {
-    for (let i = 0; i < numberChosenSpecial; i++) {
-      console.log(
-        specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
-      );
-    }
+if (numberChosenSpecial < 2 || numberChosenSpecial > 32) {
+  alert("Please enter a number between 2 and 32, press button again");
+} else {
+  for (let i = 0; i < numberChosenSpecial; i++) {
+    console.log(
+      specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+    );
   }
 }
 
-let numberChosenNumeric = "";
-function getUserNumericCharacterNumber() {
-  numberChosenNumeric = prompt(
-    "How many numerical characters would you like? Please pick between 2 and 32"
-  );
-  return numberChosenNumeric;
-}
-
-// RUN THE FUNCTION
-getUserSpecialCharacterNumber();
-getUserNumericCharacterNumber();
+// let numberChosenNumeric = "";
+// function getUserNumericCharacterNumber() {
+//   numberChosenNumeric = prompt(
+//     "How many numerical characters would you like? Please pick between 2 and 32"A
+//   );
+//   return numberChosenNumeric;
+// }
 
 // GET NUBER OF RANDOM SPECIAL CHARACTERS BASED ON USER NUMBER SELECTION
 // function createSpecialCharacterPassword() {
