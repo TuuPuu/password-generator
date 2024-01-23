@@ -63,32 +63,30 @@ function executeSpecialCharacter(x) {
 
 // execute function for Special Character x number of times
 function getUserInput() {
-  // Get user input as a string
-  let userInput = prompt("Enter a number between 1 and 10:");
+  let userInput = prompt(
+    "How many Special Characters would you like? Enter a number between 1 and 10:"
+  );
 
-  // Convert the user input to a number
+  // change input into number
   let userNumber = parseInt(userInput, 10);
 
-  // Check if the conversion is successful
+  // checks if input is valid
   if (!isNaN(userNumber)) {
-    // Check if the number is an integer
     if (Number.isInteger(userNumber)) {
-      // Check if the number is within the desired range
       if (userNumber >= 1 && userNumber <= 10) {
-        // User input is a valid number within the specified range
+        // Checks if within the desired range
         console.log("User input:", userNumber);
-        // Now you can use userNumber in your code
       } else {
-        // Invalid input: not within the desired range
-        console.error("Invalid input. Please enter a number between 1 and 10.");
+        alert("Uh Oh, Invalid input. Please enter a number between 1 and 10.");
+        return;
       }
     } else {
-      // Invalid input: not an integer
-      console.error("Invalid input. Please enter a whole number.");
+      alert("Uh Oh, Invalid input. Please enter a whole number.");
+      return;
     }
   } else {
-    // Invalid input: not a number
-    console.error("Invalid input. Please enter a valid number.");
+    alert("Uh Oh, Invalid input. Please enter a valid number.");
+    return;
   }
 
   return userNumber; // Return the converted number instead of the original string
