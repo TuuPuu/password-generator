@@ -8,12 +8,14 @@
 // RANDOMLY SELECT UPPER CASE CHARACTER
 // ADD ALL VALUES TOGETHER TO CREATE PASSWORD
 
+// VARIABLE FOR PASSWORD
+let password = "";
+
 // Array of special characters to be included in password
 var specialCharacters = [
   "@",
   "%",
   "+",
-  "\\",
   "/",
   "'",
   "!",
@@ -35,11 +37,31 @@ var specialCharacters = [
   ".",
 ];
 
-// testing generating a random number based on array number
+function getSpecialCharacter() {
+  // testing generating a random number based on array number
+  let maxNumOfItemsInArray = specialCharacters.length;
+  let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
+  // console.log(randomNumber);
 
-let maxNumOfItemsInArray = specialCharacters.length;
-let number = Math.round(Math.random() * maxNumOfItemsInArray);
-console.log(number);
+  // get random item from array based on random number
+  let chosenSpecialCharacter = specialCharacters[randomNumber];
+  // console.log(chosenSpecialCharacter);
+
+  password = password + chosenSpecialCharacter;
+
+  return password;
+}
+
+function executeSpecialCharacter(x) {
+  for (i = 0; i < x; i++) {
+    getSpecialCharacter();
+  }
+}
+
+// execute function for special password x number of times - make this user prompt
+let x = 3;
+executeSpecialCharacter(x);
+console.log(password);
 
 // _______________________________________________________________________
 // Array of numeric characters to be included in password
