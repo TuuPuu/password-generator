@@ -8,11 +8,6 @@
 // RANDOMLY SELECT UPPER CASE CHARACTER
 // ADD ALL VALUES TOGETHER TO CREATE PASSWORD
 
-// testing generating a random number
-let maxNumOfItemsInArray = 6;
-let number = Math.round(Math.random() * maxNumOfItemsInArray);
-console.log(number);
-
 // Array of special characters to be included in password
 var specialCharacters = [
   "@",
@@ -40,6 +35,13 @@ var specialCharacters = [
   ".",
 ];
 
+// testing generating a random number based on array number
+
+let maxNumOfItemsInArray = specialCharacters.length;
+let number = Math.round(Math.random() * maxNumOfItemsInArray);
+console.log(number);
+
+// _______________________________________________________________________
 // Array of numeric characters to be included in password
 var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
