@@ -1,3 +1,18 @@
+// PSEUDO CODE
+
+// GET USER INPUT FOR NUMBER THEY WANT
+// GENERATE A RANDOM NUMBER FOR SELECTION COEFFICIENT
+// RANDOMLY SELECT SPECIAL CHARACTER
+// RANDOMLY SELECT NUMERIC CHARACTER
+// RANDOMLY SELECT LOWER CASE CHARACTER
+// RANDOMLY SELECT UPPER CASE CHARACTER
+// ADD ALL VALUES TOGETHER TO CREATE PASSWORD
+
+// testing generating a random number
+let maxNumOfItemsInArray = 6;
+let number = Math.round(Math.random() * maxNumOfItemsInArray);
+console.log(number);
+
 // Array of special characters to be included in password
 var specialCharacters = [
   "@",
@@ -88,7 +103,7 @@ var upperCasedCharacters = [
   "Z",
 ];
 
-// EMPTY VARIABLES
+/*// EMPTY VARIABLES
 let numberChosenSpecial = "";
 
 let specialCharacter = "";
@@ -107,29 +122,8 @@ if (numberChosenSpecial < 2 || numberChosenSpecial > 32) {
       specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
     );
   }
-}
-
-// let numberChosenNumeric = "";
-// function getUserNumericCharacterNumber() {
-//   numberChosenNumeric = prompt(
-//     "How many numerical characters would you like? Please pick between 2 and 32"A
-//   );
-//   return numberChosenNumeric;
-// }
-
-// GET NUBER OF RANDOM SPECIAL CHARACTERS BASED ON USER NUMBER SELECTION
-// function createSpecialCharacterPassword() {
-//   if (numberChosen < 2 || numberChosen > 32) {
-//     alert("Please enter a number between 2 and 32");
-//     getUserSpecialCharacterNumber();
-//   } else {
-//     for (let i = 0; i < numberChosen; i++) {
-//       console.log(
-//         specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
-//       );
-//     }
-//   }
-// }
+} 
+*/
 
 // Function to prompt user for password options
 function getPasswordOptions() {}
