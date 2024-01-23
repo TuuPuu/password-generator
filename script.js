@@ -10,6 +10,9 @@
 // VARIABLE FOR PASSWORD
 let password = "";
 
+// start functions from here- leave pw variable on the outside
+
+/* SPECIAL CHARACTER SELECTION */
 // Array of special characters to be included in password
 var specialCharacters = [
   "@",
@@ -51,18 +54,50 @@ function getSpecialCharacter() {
   return password;
 }
 
+// controls how many times we run function for Special character depending on how many user wants
 function executeSpecialCharacter(x) {
   for (i = 0; i < x; i++) {
     getSpecialCharacter();
   }
 }
 
-// execute function for special password x number of times - make this user prompt
+// execute function for Special Character x number of times
+function getUserInput() {
+  // Get user input as a string
+  let userInput = prompt("Enter a number between 1 and 10:");
 
-let x = 5;
+  // Convert the user input to a number
+  let userNumber = parseInt(userInput, 10);
+
+  // Check if the conversion is successful
+  if (!isNaN(userNumber)) {
+    // Check if the number is an integer
+    if (Number.isInteger(userNumber)) {
+      // Check if the number is within the desired range
+      if (userNumber >= 1 && userNumber <= 10) {
+        // User input is a valid number within the specified range
+        console.log("User input:", userNumber);
+        // Now you can use userNumber in your code
+      } else {
+        // Invalid input: not within the desired range
+        console.error("Invalid input. Please enter a number between 1 and 10.");
+      }
+    } else {
+      // Invalid input: not an integer
+      console.error("Invalid input. Please enter a whole number.");
+    }
+  } else {
+    // Invalid input: not a number
+    console.error("Invalid input. Please enter a valid number.");
+  }
+
+  return userNumber; // Return the converted number instead of the original string
+}
+
+// gets user input to get value of x and checks it is a number in our range
+let x = getUserInput();
 
 executeSpecialCharacter(x);
-console.log(password);
 
 // _______________________________________________________________________
 
@@ -71,6 +106,11 @@ console.log(password);
 function greet() {
   alert("hi");
 }
+
+// _______________________________________________________________________
+
+console.log(password);
+// put this wayy at the bottom-starts code by button press
 let button = document.getElementById("generate");
 
 button.addEventListener("click", generatePassword);
