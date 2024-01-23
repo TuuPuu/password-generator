@@ -64,6 +64,15 @@ executeSpecialCharacter(x);
 console.log(password);
 
 // _______________________________________________________________________
+
+// TEST CODE TO GET SPECIFIC NUMERICAL INOUT FROM USER
+function greet() {
+  alert("hi");
+}
+let button = document.getElementById("generate");
+
+button.addEventListener("click", greet);
+
 // Array of numeric characters to be included in password
 var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
