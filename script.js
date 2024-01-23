@@ -64,7 +64,8 @@ function executeSpecialCharacter(x) {
 // execute function for Special Character x number of times
 function getUserInput() {
   let userInput = prompt(
-    "How many Special Characters would you like? Enter a number between 1 and 10:"
+    `How many Special Characters would you like? 
+    Enter a number between 1 and 8:`
   );
 
   // change input into number
@@ -73,11 +74,11 @@ function getUserInput() {
   // checks if input is valid
   if (!isNaN(userNumber)) {
     if (Number.isInteger(userNumber)) {
-      if (userNumber >= 1 && userNumber <= 10) {
+      if (userNumber >= 1 && userNumber <= 8) {
         // Checks if within the desired range
         console.log("User input:", userNumber);
       } else {
-        alert("Uh Oh, Invalid input. Please enter a number between 1 and 10.");
+        alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
         return;
       }
     } else {
