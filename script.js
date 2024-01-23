@@ -54,14 +54,14 @@ function getSpecialCharacter() {
   return password;
 }
 
-// controls how many times we run function for Special character depending on how many user wants
+// controls how many times we run function for Special Character depending on how many user wants
 function executeSpecialCharacter(a) {
   for (i = 0; i < a; i++) {
     getSpecialCharacter();
   }
 }
 
-// execute function for Special Character x number of times
+// execute function for Special Character (a) number of times
 function getUserInputSpecial() {
   let userInput = prompt(
     `㊕ How many Special Characters would you like? 
@@ -93,7 +93,7 @@ function getUserInputSpecial() {
   return userNumber; // Return the converted number instead of the original string
 }
 
-// gets user input to get value of x and checks it is a number in our range
+// gets user input to get value of (a) and checks it is a number in our range
 let a = getUserInputSpecial();
 
 executeSpecialCharacter(a);
@@ -119,14 +119,14 @@ function getNumericCharacter() {
   return password;
 }
 
-// controls how many times we run function for Numeric character depending on how many user wants
+// controls how many times we run function for Numeric Character depending on how many user wants
 function executeNumericCharacter(b) {
   for (i = 0; i < b; i++) {
     getNumericCharacter();
   }
 }
 
-// execute function for Numeric Character x number of times
+// execute function for Numeric Character (b) number of times
 function getUserInputNumeric() {
   let userInput = prompt(
     `🔢 How many Numeric Characters would you like? 
@@ -158,7 +158,7 @@ function getUserInputNumeric() {
   return userNumber; // Return the converted number instead of the original string
 }
 
-// gets user input to get value of x and checks it is a number in our range
+// gets user input to get value of (b) and checks it is a number in our range
 let b = getUserInputNumeric();
 
 executeNumericCharacter(b);
@@ -194,6 +194,65 @@ var lowerCasedCharacters = [
   "y",
   "z",
 ];
+
+function getlowerCasedCharacter() {
+  // testing generating a random number based on array number
+  let maxNumOfItemsInArray = lowerCasedCharacters.length;
+  let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
+  // console.log(randomNumber);
+
+  // get random item from array based on random number
+  let chosenLowerCaseCharacter = lowerCasedCharacters[randomNumber];
+  // console.log(chosenSpecialCharacter);
+
+  password = password + chosenLowerCaseCharacter;
+
+  return password;
+}
+
+// controls how many times we run function for Lower Cased Character depending on how many user wants
+function executeLowerCasedCharacter(c) {
+  for (i = 0; i < c; i++) {
+    getlowerCasedCharacter();
+  }
+}
+
+// execute function for Lower Cased Character (c) number of times
+function getUserInputLowerCased() {
+  let userInput = prompt(
+    `🔡 How many Lower Cased Characters would you like? 
+    Enter a number between 1 and 8:`
+  );
+
+  // change input into number
+  let userNumber = parseInt(userInput, 10);
+
+  // checks if input is valid
+  if (!isNaN(userNumber)) {
+    if (Number.isInteger(userNumber)) {
+      if (userNumber >= 1 && userNumber <= 8) {
+        // Checks if within the desired range
+        console.log("User input:", userNumber);
+      } else {
+        alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+        return;
+      }
+    } else {
+      alert("Uh Oh, Invalid input. Please enter a whole number.");
+      return;
+    }
+  } else {
+    alert("Uh Oh, Invalid input. Please enter a valid number.");
+    return;
+  }
+
+  return userNumber; // Return the converted number instead of the original string
+}
+
+// gets user input to get value of (c) and checks it is a number in our range
+let c = getUserInputLowerCased();
+
+executeLowerCasedCharacter(c);
 
 // _______________________________________________________________________
 
