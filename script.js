@@ -7,7 +7,6 @@
 // RANDOMLY SELECT LOWER CASE CHARACTER
 // RANDOMLY SELECT UPPER CASE CHARACTER
 // ADD ALL VALUES TOGETHER TO CREATE PASSWORD
-
 // VARIABLE FOR PASSWORD
 let password = "";
 
@@ -59,19 +58,22 @@ function executeSpecialCharacter(x) {
 }
 
 // execute function for special password x number of times - make this user prompt
-let x = 3;
+
+let x = 5;
+
 executeSpecialCharacter(x);
 console.log(password);
 
 // _______________________________________________________________________
 
 // TEST CODE TO GET SPECIFIC NUMERICAL INOUT FROM USER
+//quick test function
 function greet() {
   alert("hi");
 }
 let button = document.getElementById("generate");
 
-button.addEventListener("click", greet);
+button.addEventListener("click", generatePassword);
 
 // Array of numeric characters to be included in password
 var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
