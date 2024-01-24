@@ -36,7 +36,7 @@ function generatePassword() {
   function getSpecialCharacter() {
     // testing generating a random number based on array number
     let maxNumOfItemsInArray = specialCharacters.length;
-    let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
+    let randomNumber = Math.floor(Math.random() * maxNumOfItemsInArray);
 
     // get random item from array based on random number
     let chosenSpecialCharacter = specialCharacters[randomNumber];
@@ -102,7 +102,7 @@ function generatePassword() {
   function getNumericCharacter() {
     // testing generating a random number based on array number
     let maxNumOfItemsInArray = numericCharacters.length;
-    let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
+    let randomNumber = Math.floor(Math.random() * maxNumOfItemsInArray);
 
     // get random item from array based on random number
     let chosenNumericCharacter = numericCharacters[randomNumber];
@@ -193,7 +193,7 @@ function generatePassword() {
   function getlowerCasedCharacter() {
     // testing generating a random number based on array number
     let maxNumOfItemsInArray = lowerCasedCharacters.length;
-    let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
+    let randomNumber = Math.floor(Math.random() * maxNumOfItemsInArray);
 
     // get random item from array based on random number
     let chosenLowerCaseCharacter = lowerCasedCharacters[randomNumber];
@@ -285,7 +285,7 @@ function generatePassword() {
   function getUpperCasedCharacter() {
     // testing generating a random number based on array number
     let maxNumOfItemsInArray = upperCasedCharacters.length;
-    let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
+    let randomNumber = Math.floor(Math.random() * maxNumOfItemsInArray);
 
     // get random item from array based on random number
     let chosenUpperCaseCharacter = upperCasedCharacters[randomNumber];
