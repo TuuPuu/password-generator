@@ -8,6 +8,7 @@
 // RANDOMLY SELECT UPPER CASE CHARACTER
 // ADD ALL VALUES TOGETHER TO CREATE PASSWORD
 // VARIABLE FOR PASSWORD
+
 let password = "";
 
 // start functions from here- leave pw variable on the outside
@@ -354,6 +355,8 @@ let button = document.getElementById("generate");
 let passwordDisplay = document.getElementById("password");
 
 button.addEventListener("click", generatePassword);
+
+passwordDisplay.value = `${password}`;
 
 // _______________________________________________________________________
 // OLD STARTER CODE IGNORE
