@@ -1,22 +1,14 @@
-// PSEUDO CODE
-
-// GET USER INPUT FOR NUMBER THEY WANT
-// GENERATE A RANDOM NUMBER FOR SELECTION COEFFICIENT
-// RANDOMLY SELECT SPECIAL CHARACTER
-// RANDOMLY SELECT NUMERIC CHARACTER
-// RANDOMLY SELECT LOWER CASE CHARACTER
-// RANDOMLY SELECT UPPER CASE CHARACTER
-// ADD ALL VALUES TOGETHER TO CREATE PASSWORD
-// VARIABLE FOR PASSWORD
-
 let password = "";
 
-// start functions from here- leave pw variable on the outside
 function generatePassword() {
+  // ensure password is clear at start
   password = "";
+
+  // _______________________________________________________________________
+
   /* SPECIAL CHARACTER SELECTION */
   // Array of special characters to be included in password
-  var specialCharacters = [
+  const specialCharacters = [
     "@",
     "%",
     "+",
@@ -45,11 +37,9 @@ function generatePassword() {
     // testing generating a random number based on array number
     let maxNumOfItemsInArray = specialCharacters.length;
     let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
-    // console.log(randomNumber);
 
     // get random item from array based on random number
     let chosenSpecialCharacter = specialCharacters[randomNumber];
-    // console.log(chosenSpecialCharacter);
 
     password = password + chosenSpecialCharacter;
 
@@ -78,17 +68,20 @@ function generatePassword() {
       if (Number.isInteger(userNumber)) {
         if (userNumber >= 1 && userNumber <= 8) {
           // Checks if within the desired range
-          console.log("User input:", userNumber);
+          console.log("______PASSWORD GENERATION SUMMARY______");
+          console.log("Number of Special Characters chosen:", userNumber);
         } else {
-          alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+          alert(
+            "🙈 Uh Oh, Invalid input. Please enter a number between 1 and 8."
+          );
           return;
         }
       } else {
-        alert("Uh Oh, Invalid input. Please enter a whole number.");
+        alert("🙈 Uh Oh, Invalid input. Please enter a whole number.");
         return;
       }
     } else {
-      alert("Uh Oh, Invalid input. Please enter a valid number.");
+      alert("🙈 Uh Oh, Invalid input. Please enter a valid number.");
       return;
     }
 
@@ -104,17 +97,15 @@ function generatePassword() {
 
   /* NUMERIC CHARACTER SELECTION */
   // Array of numeric characters to be included in password
-  var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  const numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   function getNumericCharacter() {
     // testing generating a random number based on array number
     let maxNumOfItemsInArray = numericCharacters.length;
     let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
-    // console.log(randomNumber);
 
     // get random item from array based on random number
     let chosenNumericCharacter = numericCharacters[randomNumber];
-    // console.log(chosenNumericCharacter);
 
     password = password + chosenNumericCharacter;
 
@@ -143,17 +134,19 @@ function generatePassword() {
       if (Number.isInteger(userNumber)) {
         if (userNumber >= 1 && userNumber <= 8) {
           // Checks if within the desired range
-          console.log("User input:", userNumber);
+          console.log("Number of Numeric Characters chosen:", userNumber);
         } else {
-          alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+          alert(
+            "🙈 Uh Oh, Invalid input. Please enter a number between 1 and 8."
+          );
           return;
         }
       } else {
-        alert("Uh Oh, Invalid input. Please enter a whole number.");
+        alert("🙈 Uh Oh, Invalid input. Please enter a whole number.");
         return;
       }
     } else {
-      alert("Uh Oh, Invalid input. Please enter a valid number.");
+      alert("🙈 Uh Oh, Invalid input. Please enter a valid number.");
       return;
     }
 
@@ -168,7 +161,7 @@ function generatePassword() {
 
   /* LOWER CASE CHARACTER SELECTION */
   // Array of lowercase characters to be included in password
-  var lowerCasedCharacters = [
+  const lowerCasedCharacters = [
     "a",
     "b",
     "c",
@@ -201,11 +194,9 @@ function generatePassword() {
     // testing generating a random number based on array number
     let maxNumOfItemsInArray = lowerCasedCharacters.length;
     let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
-    // console.log(randomNumber);
 
     // get random item from array based on random number
     let chosenLowerCaseCharacter = lowerCasedCharacters[randomNumber];
-    // console.log(chosenSpecialCharacter);
 
     password = password + chosenLowerCaseCharacter;
 
@@ -234,17 +225,19 @@ function generatePassword() {
       if (Number.isInteger(userNumber)) {
         if (userNumber >= 1 && userNumber <= 8) {
           // Checks if within the desired range
-          console.log("User input:", userNumber);
+          console.log("Number of Lower Cased Characters chosen:", userNumber);
         } else {
-          alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+          alert(
+            "🙈 Uh Oh, Invalid input. Please enter a number between 1 and 8."
+          );
           return;
         }
       } else {
-        alert("Uh Oh, Invalid input. Please enter a whole number.");
+        alert("🙈 Uh Oh, Invalid input. Please enter a whole number.");
         return;
       }
     } else {
-      alert("Uh Oh, Invalid input. Please enter a valid number.");
+      alert("🙈 Uh Oh, Invalid input. Please enter a valid number.");
       return;
     }
 
@@ -260,7 +253,7 @@ function generatePassword() {
 
   /* UPPER CASE CHARACTER SELECTION */
   // Array of uppercase characters to be included in password
-  var upperCasedCharacters = [
+  const upperCasedCharacters = [
     "A",
     "B",
     "C",
@@ -293,11 +286,9 @@ function generatePassword() {
     // testing generating a random number based on array number
     let maxNumOfItemsInArray = upperCasedCharacters.length;
     let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
-    // console.log(randomNumber);
 
     // get random item from array based on random number
     let chosenUpperCaseCharacter = upperCasedCharacters[randomNumber];
-    // console.log(chosenSpecialCharacter);
 
     password = password + chosenUpperCaseCharacter;
 
@@ -326,17 +317,19 @@ function generatePassword() {
       if (Number.isInteger(userNumber)) {
         if (userNumber >= 1 && userNumber <= 8) {
           // Checks if within the desired range
-          console.log("User input:", userNumber);
+          console.log("Number of Upper Cased Characters chosen:", userNumber);
         } else {
-          alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+          alert(
+            "🙈 Uh Oh, Invalid input. Please enter a number between 1 and 8."
+          );
           return;
         }
       } else {
-        alert("Uh Oh, Invalid input. Please enter a whole number.");
+        alert("🙈 Uh Oh, Invalid input. Please enter a whole number.");
         return;
       }
     } else {
-      alert("Uh Oh, Invalid input. Please enter a valid number.");
+      alert("🙈 Uh Oh, Invalid input. Please enter a valid number.");
       return;
     }
 
@@ -348,14 +341,14 @@ function generatePassword() {
 
   executeUpperCasedCharacter(d);
 
-  console.log(password);
+  console.log(`Generated password is: ${password}`);
   return password;
 }
 
 // _______________________________________________________________________
 
 // FINAL OUTPUT AND EVENT LISTENER TO BEGIN PASSWORD GENERATION
-var generateBtn = document.querySelector("#generate");
+const generateBtn = document.querySelector("#generate");
 
 function writePassword() {
   var password = generatePassword();
@@ -366,10 +359,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// put this wayy at the bottom-starts code by button press
-// let button = document.getElementById("generate");
-// button.addEventListener("click", generatePassword);
-
-// _______________________________________________________________________
-// OLD STARTER CODE IGNORE
