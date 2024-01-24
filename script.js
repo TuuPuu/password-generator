@@ -12,367 +12,351 @@
 let password = "";
 
 // start functions from here- leave pw variable on the outside
+function generatePassword() {
+  password = "";
+  /* SPECIAL CHARACTER SELECTION */
+  // Array of special characters to be included in password
+  var specialCharacters = [
+    "@",
+    "%",
+    "+",
+    "/",
+    "'",
+    "!",
+    "#",
+    "$",
+    "^",
+    "?",
+    ":",
+    ",",
+    ")",
+    "(",
+    "}",
+    "{",
+    "]",
+    "[",
+    "~",
+    "-",
+    "_",
+    ".",
+  ];
 
-/* SPECIAL CHARACTER SELECTION */
-// Array of special characters to be included in password
-var specialCharacters = [
-  "@",
-  "%",
-  "+",
-  "/",
-  "'",
-  "!",
-  "#",
-  "$",
-  "^",
-  "?",
-  ":",
-  ",",
-  ")",
-  "(",
-  "}",
-  "{",
-  "]",
-  "[",
-  "~",
-  "-",
-  "_",
-  ".",
-];
+  function getSpecialCharacter() {
+    // testing generating a random number based on array number
+    let maxNumOfItemsInArray = specialCharacters.length;
+    let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
+    // console.log(randomNumber);
 
-function getSpecialCharacter() {
-  // testing generating a random number based on array number
-  let maxNumOfItemsInArray = specialCharacters.length;
-  let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
-  // console.log(randomNumber);
+    // get random item from array based on random number
+    let chosenSpecialCharacter = specialCharacters[randomNumber];
+    // console.log(chosenSpecialCharacter);
 
-  // get random item from array based on random number
-  let chosenSpecialCharacter = specialCharacters[randomNumber];
-  // console.log(chosenSpecialCharacter);
+    password = password + chosenSpecialCharacter;
 
-  password = password + chosenSpecialCharacter;
-
-  return password;
-}
-
-// controls how many times we run function for Special Character depending on how many user wants
-function executeSpecialCharacter(a) {
-  for (i = 0; i < a; i++) {
-    getSpecialCharacter();
+    return password;
   }
-}
 
-// execute function for Special Character (a) number of times
-function getUserInputSpecial() {
-  let userInput = prompt(
-    `㊕ How many Special Characters would you like? 
+  // controls how many times we run function for Special Character depending on how many user wants
+  function executeSpecialCharacter(a) {
+    for (i = 0; i < a; i++) {
+      getSpecialCharacter();
+    }
+  }
+
+  // execute function for Special Character (a) number of times
+  function getUserInputSpecial() {
+    let userInput = prompt(
+      `㊕ How many Special Characters would you like? 
     Enter a number between 1 and 8:`
-  );
+    );
 
-  // change input into number
-  let userNumber = parseInt(userInput, 10);
+    // change input into number
+    let userNumber = parseInt(userInput, 10);
 
-  // checks if input is valid
-  if (!isNaN(userNumber)) {
-    if (Number.isInteger(userNumber)) {
-      if (userNumber >= 1 && userNumber <= 8) {
-        // Checks if within the desired range
-        console.log("User input:", userNumber);
+    // checks if input is valid
+    if (!isNaN(userNumber)) {
+      if (Number.isInteger(userNumber)) {
+        if (userNumber >= 1 && userNumber <= 8) {
+          // Checks if within the desired range
+          console.log("User input:", userNumber);
+        } else {
+          alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+          return;
+        }
       } else {
-        alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+        alert("Uh Oh, Invalid input. Please enter a whole number.");
         return;
       }
     } else {
-      alert("Uh Oh, Invalid input. Please enter a whole number.");
+      alert("Uh Oh, Invalid input. Please enter a valid number.");
       return;
     }
-  } else {
-    alert("Uh Oh, Invalid input. Please enter a valid number.");
-    return;
+
+    return userNumber; // Return the converted number instead of the original string
   }
 
-  return userNumber; // Return the converted number instead of the original string
-}
+  // gets user input to get value of (a) and checks it is a number in our range
+  let a = getUserInputSpecial();
 
-// gets user input to get value of (a) and checks it is a number in our range
-let a = getUserInputSpecial();
+  executeSpecialCharacter(a);
 
-executeSpecialCharacter(a);
+  // _______________________________________________________________________
 
-// _______________________________________________________________________
+  /* NUMERIC CHARACTER SELECTION */
+  // Array of numeric characters to be included in password
+  var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-/* NUMERIC CHARACTER SELECTION */
-// Array of numeric characters to be included in password
-var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  function getNumericCharacter() {
+    // testing generating a random number based on array number
+    let maxNumOfItemsInArray = numericCharacters.length;
+    let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
+    // console.log(randomNumber);
 
-function getNumericCharacter() {
-  // testing generating a random number based on array number
-  let maxNumOfItemsInArray = numericCharacters.length;
-  let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
-  // console.log(randomNumber);
+    // get random item from array based on random number
+    let chosenNumericCharacter = numericCharacters[randomNumber];
+    // console.log(chosenNumericCharacter);
 
-  // get random item from array based on random number
-  let chosenNumericCharacter = numericCharacters[randomNumber];
-  // console.log(chosenNumericCharacter);
+    password = password + chosenNumericCharacter;
 
-  password = password + chosenNumericCharacter;
-
-  return password;
-}
-
-// controls how many times we run function for Numeric Character depending on how many user wants
-function executeNumericCharacter(b) {
-  for (i = 0; i < b; i++) {
-    getNumericCharacter();
+    return password;
   }
-}
 
-// execute function for Numeric Character (b) number of times
-function getUserInputNumeric() {
-  let userInput = prompt(
-    `🔢 How many Numeric Characters would you like? 
+  // controls how many times we run function for Numeric Character depending on how many user wants
+  function executeNumericCharacter(b) {
+    for (i = 0; i < b; i++) {
+      getNumericCharacter();
+    }
+  }
+
+  // execute function for Numeric Character (b) number of times
+  function getUserInputNumeric() {
+    let userInput = prompt(
+      `🔢 How many Numeric Characters would you like? 
     Enter a number between 1 and 8:`
-  );
+    );
 
-  // change input into number
-  let userNumber = parseInt(userInput, 10);
+    // change input into number
+    let userNumber = parseInt(userInput, 10);
 
-  // checks if input is valid
-  if (!isNaN(userNumber)) {
-    if (Number.isInteger(userNumber)) {
-      if (userNumber >= 1 && userNumber <= 8) {
-        // Checks if within the desired range
-        console.log("User input:", userNumber);
+    // checks if input is valid
+    if (!isNaN(userNumber)) {
+      if (Number.isInteger(userNumber)) {
+        if (userNumber >= 1 && userNumber <= 8) {
+          // Checks if within the desired range
+          console.log("User input:", userNumber);
+        } else {
+          alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+          return;
+        }
       } else {
-        alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+        alert("Uh Oh, Invalid input. Please enter a whole number.");
         return;
       }
     } else {
-      alert("Uh Oh, Invalid input. Please enter a whole number.");
+      alert("Uh Oh, Invalid input. Please enter a valid number.");
       return;
     }
-  } else {
-    alert("Uh Oh, Invalid input. Please enter a valid number.");
-    return;
+
+    return userNumber; // Return the converted number instead of the original string
   }
 
-  return userNumber; // Return the converted number instead of the original string
-}
+  // gets user input to get value of (b) and checks it is a number in our range
+  let b = getUserInputNumeric();
 
-// gets user input to get value of (b) and checks it is a number in our range
-let b = getUserInputNumeric();
+  executeNumericCharacter(b);
+  // _______________________________________________________________________
 
-executeNumericCharacter(b);
-// _______________________________________________________________________
+  /* LOWER CASE CHARACTER SELECTION */
+  // Array of lowercase characters to be included in password
+  var lowerCasedCharacters = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
 
-/* LOWER CASE CHARACTER SELECTION */
-// Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
+  function getlowerCasedCharacter() {
+    // testing generating a random number based on array number
+    let maxNumOfItemsInArray = lowerCasedCharacters.length;
+    let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
+    // console.log(randomNumber);
 
-function getlowerCasedCharacter() {
-  // testing generating a random number based on array number
-  let maxNumOfItemsInArray = lowerCasedCharacters.length;
-  let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
-  // console.log(randomNumber);
+    // get random item from array based on random number
+    let chosenLowerCaseCharacter = lowerCasedCharacters[randomNumber];
+    // console.log(chosenSpecialCharacter);
 
-  // get random item from array based on random number
-  let chosenLowerCaseCharacter = lowerCasedCharacters[randomNumber];
-  // console.log(chosenSpecialCharacter);
+    password = password + chosenLowerCaseCharacter;
 
-  password = password + chosenLowerCaseCharacter;
-
-  return password;
-}
-
-// controls how many times we run function for Lower Cased Character depending on how many user wants
-function executeLowerCasedCharacter(c) {
-  for (i = 0; i < c; i++) {
-    getlowerCasedCharacter();
+    return password;
   }
-}
 
-// execute function for Lower Cased Character (c) number of times
-function getUserInputLowerCased() {
-  let userInput = prompt(
-    `🔡 How many Lower Cased Characters would you like? 
+  // controls how many times we run function for Lower Cased Character depending on how many user wants
+  function executeLowerCasedCharacter(c) {
+    for (i = 0; i < c; i++) {
+      getlowerCasedCharacter();
+    }
+  }
+
+  // execute function for Lower Cased Character (c) number of times
+  function getUserInputLowerCased() {
+    let userInput = prompt(
+      `🔡 How many Lower Cased Characters would you like? 
     Enter a number between 1 and 8:`
-  );
+    );
 
-  // change input into number
-  let userNumber = parseInt(userInput, 10);
+    // change input into number
+    let userNumber = parseInt(userInput, 10);
 
-  // checks if input is valid
-  if (!isNaN(userNumber)) {
-    if (Number.isInteger(userNumber)) {
-      if (userNumber >= 1 && userNumber <= 8) {
-        // Checks if within the desired range
-        console.log("User input:", userNumber);
+    // checks if input is valid
+    if (!isNaN(userNumber)) {
+      if (Number.isInteger(userNumber)) {
+        if (userNumber >= 1 && userNumber <= 8) {
+          // Checks if within the desired range
+          console.log("User input:", userNumber);
+        } else {
+          alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+          return;
+        }
       } else {
-        alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+        alert("Uh Oh, Invalid input. Please enter a whole number.");
         return;
       }
     } else {
-      alert("Uh Oh, Invalid input. Please enter a whole number.");
+      alert("Uh Oh, Invalid input. Please enter a valid number.");
       return;
     }
-  } else {
-    alert("Uh Oh, Invalid input. Please enter a valid number.");
-    return;
+
+    return userNumber; // Return the converted number instead of the original string
   }
 
-  return userNumber; // Return the converted number instead of the original string
-}
+  // gets user input to get value of (c) and checks it is a number in our range
+  let c = getUserInputLowerCased();
 
-// gets user input to get value of (c) and checks it is a number in our range
-let c = getUserInputLowerCased();
+  executeLowerCasedCharacter(c);
 
-executeLowerCasedCharacter(c);
+  // _______________________________________________________________________
 
-// _______________________________________________________________________
+  /* UPPER CASE CHARACTER SELECTION */
+  // Array of uppercase characters to be included in password
+  var upperCasedCharacters = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
 
-/* UPPER CASE CHARACTER SELECTION */
-// Array of uppercase characters to be included in password
-var upperCasedCharacters = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
+  function getUpperCasedCharacter() {
+    // testing generating a random number based on array number
+    let maxNumOfItemsInArray = upperCasedCharacters.length;
+    let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
+    // console.log(randomNumber);
 
-function getUpperCasedCharacter() {
-  // testing generating a random number based on array number
-  let maxNumOfItemsInArray = upperCasedCharacters.length;
-  let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
-  // console.log(randomNumber);
+    // get random item from array based on random number
+    let chosenUpperCaseCharacter = upperCasedCharacters[randomNumber];
+    // console.log(chosenSpecialCharacter);
 
-  // get random item from array based on random number
-  let chosenUpperCaseCharacter = upperCasedCharacters[randomNumber];
-  // console.log(chosenSpecialCharacter);
+    password = password + chosenUpperCaseCharacter;
 
-  password = password + chosenUpperCaseCharacter;
-
-  return password;
-}
-
-// controls how many times we run function for Upper Cased Character depending on how many user wants
-function executeUpperCasedCharacter(d) {
-  for (i = 0; i < d; i++) {
-    getUpperCasedCharacter();
+    return password;
   }
-}
 
-// execute function for Upper Cased Character (d) number of times
-function getUserInputUpperCased() {
-  let userInput = prompt(
-    `🔠 Finally, How many Upper Cased Characters would you like? 
+  // controls how many times we run function for Upper Cased Character depending on how many user wants
+  function executeUpperCasedCharacter(d) {
+    for (i = 0; i < d; i++) {
+      getUpperCasedCharacter();
+    }
+  }
+
+  // execute function for Upper Cased Character (d) number of times
+  function getUserInputUpperCased() {
+    let userInput = prompt(
+      `🔠 Finally, How many Upper Cased Characters would you like? 
     Enter a number between 1 and 8:`
-  );
+    );
 
-  // change input into number
-  let userNumber = parseInt(userInput, 10);
+    // change input into number
+    let userNumber = parseInt(userInput, 10);
 
-  // checks if input is valid
-  if (!isNaN(userNumber)) {
-    if (Number.isInteger(userNumber)) {
-      if (userNumber >= 1 && userNumber <= 8) {
-        // Checks if within the desired range
-        console.log("User input:", userNumber);
+    // checks if input is valid
+    if (!isNaN(userNumber)) {
+      if (Number.isInteger(userNumber)) {
+        if (userNumber >= 1 && userNumber <= 8) {
+          // Checks if within the desired range
+          console.log("User input:", userNumber);
+        } else {
+          alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+          return;
+        }
       } else {
-        alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+        alert("Uh Oh, Invalid input. Please enter a whole number.");
         return;
       }
     } else {
-      alert("Uh Oh, Invalid input. Please enter a whole number.");
+      alert("Uh Oh, Invalid input. Please enter a valid number.");
       return;
     }
-  } else {
-    alert("Uh Oh, Invalid input. Please enter a valid number.");
-    return;
+
+    return userNumber; // Return the converted number instead of the original string
   }
 
-  return userNumber; // Return the converted number instead of the original string
+  // gets user input to get value of (d) and checks it is a number in our range
+  let d = getUserInputUpperCased();
+
+  executeUpperCasedCharacter(d);
+
+  console.log(password);
+  return password;
 }
 
-// gets user input to get value of (d) and checks it is a number in our range
-let d = getUserInputUpperCased();
-
-executeUpperCasedCharacter(d);
-
 // _______________________________________________________________________
+
 // FINAL OUTPUT AND EVENT LISTENER TO BEGIN PASSWORD GENERATION
-console.log(password);
-// put this wayy at the bottom-starts code by button press
-let button = document.getElementById("generate");
-let passwordDisplay = document.getElementById("password");
-
-button.addEventListener("click", generatePassword);
-
-passwordDisplay.value = `${password}`;
-
-// _______________________________________________________________________
-// OLD STARTER CODE IGNORE
-// Function to prompt user for password options
-function getPasswordOptions() {}
-
-// Function for getting a random element from an array
-function getRandom(arr) {}
-
-// Function to generate password with user input
-function generatePassword() {}
-
-// Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -382,3 +366,10 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// put this wayy at the bottom-starts code by button press
+// let button = document.getElementById("generate");
+// button.addEventListener("click", generatePassword);
+
+// _______________________________________________________________________
+// OLD STARTER CODE IGNORE
