@@ -4,17 +4,18 @@
 ## SUMMARY
 
 My main goal was to build a password generator that follows certain parameters.
-These include a random special character, nubers and a mix of lower and upper case characters. The password cannot exceed 128 characters.
+These include a random special character, numbers and a mix of lower and upper case characters. The password cannot exceed 128 characters while having to be a minimum of 8 characters.
 From a developer perspective, I aimed to create clear and concise code that could easily be refactored in future.
-Moving forward, a lot more work needs to be put into the functions in this code as values were not returning most likely due to a miss match of variables and scope. This in turn discouraged me to create the remaining sections. 
-This requires future refactoring.
+
+I returned to this project as I have gained a better understanding of Dev Ops. I broke down the project into managable tasks and successully created a MVP. 
+Moving forward, the code could do with some futher refactoring in order to ensure it is DRY.
 
 
 
 ## INSTALLATION
 
-Application has been deployed successfully. Please access site at:
-https://tuupuu.github.io/password-generator/
+Application has been re-deployed successfully, using Netlify. Please access site at:
+https://chimerical-cajeta-7c361f.netlify.app/
 
 
 Stages in code refactor can be found via GitHub:
@@ -25,7 +26,8 @@ https://github.com/TuuPuu/password-generator
 
 ## USAGE
 
-This password generator serves as a way to see how functions, for loops and arrays can work togetherin code.
+This password generator serves as a way to see how functions, for loops and arrays can work together in code. 
+A wonderful way to gain a random password
 
 
 
