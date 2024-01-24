@@ -351,19 +351,25 @@ function generatePassword() {
 
 // FINAL OUTPUT AND DISPLAY OF PASSWORD
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  const password = generatePassword();
+  const passwordText = document.querySelector("#password");
+  const subTitle = document.querySelector("h2");
+  const sorryMessage =
+    "Sorry, please start again >.< \n" +
+    "Try and chose at least 2 values for each character type \n" +
+    "🙊";
 
   // check to ensure password is appropriate minimum length
   if (password.length < 8) {
     console.log("Please start again, chose valid numbers between 1 & 8");
-    let sorryMessage = ` Uh Oh, Password too short!
-    Sorry, please start again >.<
-    Try and chose at least 2 values for each character type 🙊`;
+    subTitle.innerHTML = "Uh Oh, Password too short! (,,>﹏<,,)";
     passwordText.value = sorryMessage;
 
     // displays password on document
-  } else passwordText.value = password;
+  } else {
+    subTitle.innerHTML = "Don't forget it! (˶ᵔ ᵕ ᵔ˶)";
+    passwordText.value = "✨ Your password is ✨ \n" + password;
+  }
 }
 
 // _______________________________________________________________________
