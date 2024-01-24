@@ -1,5 +1,7 @@
 let password = "";
+// _______________________________________________________________________
 
+// GENERATE PASSWORD
 function generatePassword() {
   // ensure password is clear at start
   password = "";
@@ -347,7 +349,7 @@ function generatePassword() {
 
 // _______________________________________________________________________
 
-// FINAL OUTPUT AND EVENT LISTENER TO BEGIN PASSWORD GENERATION
+// FINAL OUTPUT AND DISPLAY OF PASSWORD
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -364,6 +366,8 @@ function writePassword() {
   } else passwordText.value = password;
 }
 
-// Add event listener to generate button
+// _______________________________________________________________________
+
+// EVENT LISTENER TO BEGIN PASSWORD GENERATION ON CLICK
 const generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
