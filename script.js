@@ -287,11 +287,71 @@ var upperCasedCharacters = [
   "Z",
 ];
 
+function getUpperCasedCharacter() {
+  // testing generating a random number based on array number
+  let maxNumOfItemsInArray = upperCasedCharacters.length;
+  let randomNumber = Math.round(Math.random() * maxNumOfItemsInArray);
+  // console.log(randomNumber);
+
+  // get random item from array based on random number
+  let chosenUpperCaseCharacter = upperCasedCharacters[randomNumber];
+  // console.log(chosenSpecialCharacter);
+
+  password = password + chosenUpperCaseCharacter;
+
+  return password;
+}
+
+// controls how many times we run function for Upper Cased Character depending on how many user wants
+function executeUpperCasedCharacter(d) {
+  for (i = 0; i < d; i++) {
+    getUpperCasedCharacter();
+  }
+}
+
+// execute function for Upper Cased Character (d) number of times
+function getUserInputUpperCased() {
+  let userInput = prompt(
+    `🔠 Finally, How many Upper Cased Characters would you like? 
+    Enter a number between 1 and 8:`
+  );
+
+  // change input into number
+  let userNumber = parseInt(userInput, 10);
+
+  // checks if input is valid
+  if (!isNaN(userNumber)) {
+    if (Number.isInteger(userNumber)) {
+      if (userNumber >= 1 && userNumber <= 8) {
+        // Checks if within the desired range
+        console.log("User input:", userNumber);
+      } else {
+        alert("Uh Oh, Invalid input. Please enter a number between 1 and 8.");
+        return;
+      }
+    } else {
+      alert("Uh Oh, Invalid input. Please enter a whole number.");
+      return;
+    }
+  } else {
+    alert("Uh Oh, Invalid input. Please enter a valid number.");
+    return;
+  }
+
+  return userNumber; // Return the converted number instead of the original string
+}
+
+// gets user input to get value of (d) and checks it is a number in our range
+let d = getUserInputUpperCased();
+
+executeUpperCasedCharacter(d);
+
 // _______________________________________________________________________
 // FINAL OUTPUT AND EVENT LISTENER TO BEGIN PASSWORD GENERATION
 console.log(password);
 // put this wayy at the bottom-starts code by button press
 let button = document.getElementById("generate");
+let passwordDisplay = document.getElementById("password");
 
 button.addEventListener("click", generatePassword);
 
