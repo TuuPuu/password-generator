@@ -348,14 +348,22 @@ function generatePassword() {
 // _______________________________________________________________________
 
 // FINAL OUTPUT AND EVENT LISTENER TO BEGIN PASSWORD GENERATION
-const generateBtn = document.querySelector("#generate");
-
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  // check to ensure password is appropriate minimum length
+  if (password.length < 8) {
+    console.log("Please start again, chose valid numbers between 1 & 8");
+    let sorryMessage = ` Uh Oh, Password too short!
+    Sorry, please start again >.<
+    Try and chose at least 2 values for each character type 🙊`;
+    passwordText.value = sorryMessage;
+
+    // displays password on document
+  } else passwordText.value = password;
 }
 
 // Add event listener to generate button
+const generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
